@@ -41,7 +41,7 @@ try:
     API_KEY = st.secrets["GEMINI_API_KEY"]
 except (KeyError, FileNotFoundError):
     # PASTE YOUR ACTUAL API KEY INSIDE THE QUOTES BELOW FOR LOCAL TESTING
-    API_KEY = "AIzaSyBQ-ELkLWeI4uCtq2CGLVLZgQqBqJHjHJg"  
+    API_KEY = ""  
 
 genai.configure(api_key=API_KEY)
 
@@ -79,3 +79,4 @@ if user_input := st.chat_input("E.g., What are the best home remedies for a sore
         response = st.session_state.chat_session.send_message(user_input, stream=True)
 
         st.write_stream(stream_parser(response))
+
